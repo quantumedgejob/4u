@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPLICATION FORM</title>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init("Vwn4oh6tDif276o2u");
+})();
+</script>
+</head>
+<body>
+    <h1>Data Entry Application Form</h1>
+<fieldset>
+ <div class="Form22">
+        
+    <form onsubmit="sendEmail(); reset(); return false;">
+        <div>
+        <label for="FULL NAME">Full Name </label><br>
+        <input type="text" id="firstname" placeholder="First Name" size="68" required> &nbsp;&nbsp;&nbsp;
+        <input type="text" id="lastname" placeholder="Last Name" size="68" required>
+        </div>
+        <div>
+            <br>
+        <label for="SSN">SSN</label>
+        <input type="text" name="SSN" id="SSN" size="48" required maxlength="11" placeholder="XXX-XX-XXXX" required >
+        <label for="DOB">DOB</label>
+        <input type="text" name="DOB" id="DOB" size="48" placeholder=" MM/DD/YYYY" required> 
+        <Label for="Country">Gender</Label>
+        <select name="Gender" id="Gender" required>
+    
+            <option value="Empty"></option>
+            <option value="MALE">MALE</option>
+            <option value="FEMALE">FEMALE</option>
+            <option value="OTHER">OTHERS</option>
+        </select>
+        </div> 
+        <br>
+        <div>
+        <label for="StreetAddress">Address information</label> <br>
+        <input type="text" id="StreetAddress" size="68" placeholder="Street Address" required>&nbsp;&nbsp;&nbsp;
+        <input type="text" id="StreetAddress2" size="68" placeholder="Street Address 2" > 
+        <br>
+        <br>
+        <input type="number" id="Zipcode" size="30" placeholder="Zipcode" required>&nbsp;&nbsp;&nbsp;
+        <input type="text" id="City" size="30" placeholder="City" required> &nbsp;&nbsp;&nbsp;
+        <input type="text" id="State" size="30" placeholder="State" required> 
+        <Label for="Country">Choose your Country</Label>
+        <select name="Country" id="Country">
+    
+            <option value="Empty"></option>
+            <option value="USA">United States</option>
+            <option value="CANADA">Canada</option>
+            <option value="Uk">United Kingdom</option>
+            <option value="Other">Others</option>
+            
+        </select>
+        <br>
+    </div>
+    <br>
+    <div>
+        <label for="contact">Contact information</label><br>
+        <input type="email" id="Email" size="72" placeholder="Email Address" required>
+        <input type="number" id="Phone" size="72" placeholder="Phone Number" required> 
+    </div>
+    <br>
+    <label for="moreinfo"> Do you Have any illness, long term health condition or any disability that you would like to make us aware of?</label>
+    <br>
+    <textarea id="illness" cols="150" rows="5"></textarea>
+    <br>
+    <label for="moreinfo"> High School/GED attended and year of graduation</label>
+    <br>
+    <textarea id="education" cols="150" rows="5"></textarea>
+    <br>
+    <label for="moreinfo"> Special Skills</label>
+    <br>
+    <textarea id="skills" cols="150" rows="5"></textarea>
+    <br>
+
+    <label for="Upload Documentation">Identity Verification</label> <br>
+    <label for="Verify">Upload a valid Government Identification Document i.e Drivers License, State ID</p>
+    </label>
+    <input type="file" id="myfile" name="ID CARD" multiple >
+</fieldset>
+    <button type="submit"> SUBMIT APPLICATION</BUtton>
+
+</form>
+</div>
+
+
+</body>
+
+<style>
+    body{
+        background-image:url("john-schnobrich-FlPc9_VocJ4-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: wheat;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        align-content: center;
+    }
+    h1 {
+        color:#ffcc00;
+        text-align: center;
+        font-style: normal;
+        font-size: 40px;
+
+    
+    }
+    input{
+    font-family: Balto-Light, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    border-style: initial;
+    border-color: initial;
+    border: 1px solid #d8d8d8;
+    padding: 8px;
+    background-color: white;
+    color:black;
+    margin-bottom: 5px;
+    border-radius: 0;
+    }
+    label{
+        color: #ffcc00;
+        font-size: 20px;
+        background-color: transparent;
+        background-blend-mode: color;
+        
+    }
+    button{
+    background-color: #ffcc00;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: none;
+    border-style: none;
+    }
+    @media screen and (max-width:775px)
+    {
+        input{
+            width:100%;
+        }
+        textarea{
+            width: 100%;
+        }
+        fieldset{
+            border: none;
+        }
+        body{
+            margin-left: 0%;
+
+        }
+        label{
+            font-size: 15px;
+        }
+        button{
+            font-size: 15px;
+        }
+        h1{
+            font-size: 25px;
+        }
+       
+    }
+</style>
+
+
+<script>
+  function sendEmail(){
+    var params = {
+        firstname: document.getElementById("firstname").value,
+        lastname: document.getElementById("lastname").value,
+        StreetAddress: document.getElementById("StreetAddress").value,
+        StreetAddress2: document.getElementById("StreetAddress2").value,
+        City: document.getElementById("City").value,
+        State: document.getElementById("State").value,
+        Zipcode: document.getElementById("Zipcode").value,
+        Email: document.getElementById("Email").value,
+        Phone: document.getElementById("Phone").value,
+        SSN: document.getElementById("SSN").value,
+        DOB: document.getElementById("DOB").value,
+        Gender: document.getElementById("Gender").value,
+        Country: document.getElementById("Country").value,
+        myfile: document.getElementById("myfile").value,
+        education: document.getElementById("education").value,
+        illness: document.getElementById("illness").value,
+        skills: document.getElementById("skills").value,
+        
+    }
+const serviceID = "service_b32fgcw"
+const templateID = "template_sb8y0sm"
+
+emailjs.send(serviceID,templateID,params)
+.then(
+    
+        function(response){
+            console.log("SUCCESS!",
+        response.status, response.text);
+        window.location.href="success.html"
+        },   
+    function (error){console.log("FAILED...", error);
+
+    }
+    );
+}
+
+
+</script>
+</html>
